@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Multicapas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="panel form-panel" aria-labelledby="form-title">
+      <div class="panel-heading">
+        <p class="eyebrow">Agenda web</p>
+        <h1 id="form-title">Nuevo contacto</h1>
+        <p class="subtitle">Registra nombre, apellido y telefono para guardarlo en la agenda.</p>
+      </div>
+
+      <form id="contact-form" class="contact-form">
+        <label for="nombre">
+          Nombre
+          <input id="nombre" name="nombre" type="text" autocomplete="given-name" required>
+        </label>
+
+        <label for="apellido">
+          Apellido
+          <input id="apellido" name="apellido" type="text" autocomplete="family-name" required>
+        </label>
+
+        <label for="telefono">
+          Telefono
+          <input id="telefono" name="telefono" type="tel" autocomplete="tel" required>
+        </label>
+
+        <button id="save-button" type="submit">Guardar contacto</button>
+      </form>
+
+      <p id="form-message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel contacts-panel" aria-labelledby="contacts-title">
+      <div class="contacts-header">
+        <div>
+          <p class="eyebrow">Contactos guardados</p>
+          <h2 id="contacts-title">Listado de la agenda</h2>
+        </div>
+        <button id="refresh-button" type="button" class="secondary-button">Actualizar</button>
+      </div>
+
+      <div id="loading" class="loading">Cargando contactos...</div>
+      <div id="contacts-list" class="contacts-list"></div>
+      <div id="empty-state" class="empty-state" hidden>No hay contactos disponibles.</div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
